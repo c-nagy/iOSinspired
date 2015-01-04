@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>-</defaultcontrol>
+	<controls>
+		<!-- media infos -->
+		<control type="group" id="1">
+			<visible>[Player.ShowInfo | Window.IsActive(VideoOSD)] + ![Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsVisible(SliderDialog)]</visible>
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<control type="image" id="1">
+<!-- Bottom background gradient -->
+				<left>0</left>
+				<top>620</top>
+				<width>1280</width>
+				<height>100</height>
+				<texture diffuse="100000">HomeNowPlayingBack.png</texture>
+			</control>
+			<control type="image" id="1">
+<!-- Top background gradient -->
+				<left>0</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>65</height>
+				<texture diffuse="100000">HomeNowPlayingBack.png</texture>
+			</control>
+			
+			
+			<control type="group" id="1">
+				<left>330</left>
+				<top>185r</top>
+				
+				
+				
+				
+				
+				
+				
+				<control type="grouplist" id="1">
+					<left>20</left>
+					<top>60</top>
+					<width>910</width>
+					<height>35</height>
+					<itemgap>5</itemgap>
+					<orientation>horizontal</orientation>
+					
+					
+					
+					
+					
+					
+				</control>
+				
+				
+			</control>
+			<control type="group" id="1">
+<!-- Seekbar group -->
+				<left>185</left>
+				<top>710r</top>
+				<visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg]</visible>
+				<control type="label" id="1">
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>100</width>
+					<height>40</height>
+					<font>font13</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Player.Time(hh:mm:ss)]</label>
+				</control>
+				<control type="label" id="1">
+					<visible>VideoPlayer.Content(LiveTV)</visible>
+					<left>0</left>
+					<top>0</top>
+					<width>100</width>
+					<height>40</height>
+					<font>font13</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[Player.StartTime(hh:mm)]</label>
+				</control>
+				<control type="progress" id="1">
+					<description>ProgressbarCache</description>
+					<left>100</left>
+					<top>15</top>
+					<width>720</width>
+					<height>16</height>
+					<info>Player.ProgressCache</info>
+					<midtexture border="6,0,6,0">OSDProgressMidLight.png</midtexture>
+				</control>
+				<control type="progress" id="1">
+					<description>Progressbar</description>
+					<left>100</left>
+					<top>15</top>
+					<width>720</width>
+					<height>16</height>
+					<info>Player.Progress</info>
+				</control>
+				<control type="label" id="1">
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
+					<left>820</left>
+					<top>0</top>
+					<width>100</width>
+					<height>40</height>
+					<font>font13</font>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
+				</control>
+				<control type="label" id="1">
+					<visible>VideoPlayer.Content(LiveTV)</visible>
+					<left>820</left>
+					<top>0</top>
+					<width>100</width>
+					<height>40</height>
+					<font>font13</font>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$INFO[Player.FinishTime(hh:mm)]</label>
+				</control>
+			</control>
+		</control>
+		<!-- codec info -->
+		<control type="group" id="0">
+			<left>0</left>
+			<top>20</top>
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<control type="image">
+				<description>media info background image</description>
+				<left>0</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>155</height>
+				<texture>black-back.png</texture>
+			</control>
+			<control type="label" id="10">
+				<description>row 1 label</description>
+				<left>50</left>
+				<top>10</top>
+				<width>1180</width>
+				<height>30</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<label>-</label>
+			</control>
+			<control type="label" id="11">
+				<description>row 2 label</description>
+				<left>50</left>
+				<top>55</top>
+				<width>1180</width>
+				<height>30</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<label>-</label>
+			</control>
+			<control type="label" id="12">
+				<description>row 3 label</description>
+				<left>50</left>
+				<top>100</top>
+				<width>1180</width>
+				<height>45</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<label>-</label>
+			</control>
+		</control>
+		<control type="selectbutton" id="503">
+			<left>440</left>
+			<top>100</top>
+			<width>400</width>
+			<height>100</height>
+			<font>font13caps</font>
+			<description>TV Channel Group Select Button</description>
+			<texturebg border="20">OverlayDialogBackground.png</texturebg>
+			<onleft>503</onleft>
+			<onright>503</onright>
+			<onup>500</onup>
+			<ondown>500</ondown>
+			<include>VisibleFadeEffect</include>
+		</control>
+		
+	</controls>
+</window>

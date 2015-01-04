@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">100</defaultcontrol>
+	<include>dialogeffect</include>
+	<coordinates>
+		<system>1</system>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="button" id="1000">
+<!-- X button in top right corner -->
+			<description>Close Window button</description>
+			<left>40</left>
+			<top>21</top>
+			<width>64</width>
+			<height>32</height>
+			<label>-</label>
+			<font>-</font>
+			<onclick>PlayerControl(Stop)</onclick>
+			<texturefocus>DialogCloseButton-focus.png</texturefocus>
+			<texturenofocus>DialogCloseButton.png</texturenofocus>
+			<onleft>1000</onleft>
+			<onright>1000</onright>
+			<onup>100</onup>
+			<ondown>100</ondown>
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
+		</control>
+		<control type="slider" id="87">
+<!-- Slider itself, not containing bar. -->		
+			<description>Seek Slider</description>
+			<left>285</left>
+			<top>697r</top>
+			<width>720</width>
+			<height>10</height>
+			<onup>702</onup>
+			<ondown>26</ondown>
+			<action>seek</action>
+			<texturesliderbar>seekslider2.png</texturesliderbar>
+			<textureslidernib>knobSlider.png</textureslidernib>
+			<textureslidernibfocus>knobSlider.png</textureslidernibfocus>
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | VideoPlayer.Content(LiveTV)]</visible>
+		</control>
+		<!--!LiveTV -->
+		<control type="group" id="100">
+			<left>600</left>
+			<top>65r</top>
+			<defaultcontrol always="true">202</defaultcontrol>
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
+			<visible>!VideoPlayer.Content(LiveTV)</visible>
+			<control type="button" id="200">
+<!-- Skip back button -->
+				<left>-290</left>
+				<top>0</top>
+				<width>64</width>
+				<height>32</height>
+				<label>210</label>
+				<font>-</font>
+				<texturefocus>OSDPrevTrackFO.png</texturefocus>
+				<texturenofocus>OSDPrevTrackNF.png</texturenofocus>
+				<onleft>254</onleft>
+				<onright>201</onright>
+				<onup>1000</onup>
+				<ondown>1000</ondown>
+				<onclick>PlayerControl(Previous)</onclick>
+			</control>
+			<control type="button" id="201">
+<!-- Rewind button -->
+				<left>-150</left>
+				<top>0</top>
+				<width>56</width>
+				<height>32</height>
+				<label>31354</label>
+				<font>-</font>
+				<texturefocus>OSDRewindFO.png</texturefocus>
+				<texturenofocus>OSDRewindNF.png</texturenofocus>
+				<onleft>200</onleft>
+				<onright>202</onright>
+				<onup>1000</onup>
+				<ondown>1000</ondown>
+				<onclick>PlayerControl(Rewind)</onclick>
+			</control>
+			<control type="togglebutton" id="202">
+<!-- Play button -->
+				<left>0</left>
+				<top>0</top>
+				<width>38</width>
+				<height>34</height>
+				<label>31351</label>
+				<altlabel>208</altlabel>
+				<font>-</font>
+				<texturefocus>OSDPauseFO.png</texturefocus>
+				<texturenofocus>OSDPauseNF.png</texturenofocus>
+				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+				<alttexturefocus>OSDPlayFO.png</alttexturefocus>
+				<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
+				<onleft>201</onleft>
+				<onright>203</onright>
+				<onup>1000</onup>
+				<ondown>1000</ondown>
+				<onclick>PlayerControl(Play)</onclick>
+			</control>
+			<control type="button" id="204">
+<!-- Fast-forward button -->
+				<left>125</left>
+				<top>0</top>
+				<width>56</width>
+				<height>32</height>
+				<label>31353</label>
+				<font>-</font>
+				<texturefocus>OSDForwardFO.png</texturefocus>
+				<texturenofocus>OSDForwardFO.png</texturenofocus>
+				<onleft>203</onleft>
+				<onright>205</onright>
+				<onup>1000</onup>
+				<ondown>1000</ondown>
+				<onclick>PlayerControl(Forward)</onclick>
+			</control>
+			<control type="button" id="205">
+<!-- Skip forward button -->
+				<left>260</left>
+				<top>0</top>
+				<width>64</width>
+				<height>32</height>
+				<label>209</label>
+				<font>-</font>
+				<texturefocus>OSDNextTrackFO.png</texturefocus>
+				<texturenofocus>OSDNextTrackNF.png</texturenofocus>
+				<onleft>204</onleft>
+				<onright>255</onright>
+				<onup>1000</onup>
+				<ondown>1000</ondown>
+				<onclick>PlayerControl(Next)</onclick>
+			</control>
+		</control>
+
+		<!-- !LiveTV -->
+		<control type="group">
+			<left>180r</left>
+			<top>65r</top>
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
+			<visible>!VideoPlayer.Content(LiveTV)</visible>
+			
+			
+			<control type="button" id="253">
+<!-- Bookmarks button -->
+				<left>1255r</left>
+				<top>2</top>
+				<width>28</width>
+				<height>40</height>
+				<label>298</label>
+				<font>-</font>
+				<texturefocus>OSDBookmarks.png</texturefocus>
+				<texturenofocus>OSDBookmarks.png</texturenofocus>
+				<onleft>252</onleft>
+				<onright>254</onright>
+				<onup>1000</onup>
+				<ondown>1000</ondown>
+				<onclick>ActivateWindow(VideoBookmarks)</onclick>
+			</control>
+			<control type="button" id="250">
+<!-- Subtitle button -->
+				<left>1197r</left>
+				<top>4</top>
+				<width>38</width>
+				<height>38</height>
+				<label>31356</label>
+				<font>-</font>
+				<texturefocus>OSDSubtitlesFO.png</texturefocus>
+				<texturenofocus>OSDSubtitlesNF.png</texturenofocus>
+				<onleft>255</onleft>
+				<onright>251</onright>
+				<onup>404</onup>
+				<ondown>1000</ondown>
+			</control>
+			<control type="button" id="252">
+<!-- Audio settings button -->
+				<left>40</left>
+				<top>4</top>
+				<width>38</width>
+				<height>38</height>
+				<label>13396</label>
+				<font>-</font>
+				<texturefocus>OSDAudio.png</texturefocus>
+				<texturenofocus>OSDAudio.png</texturenofocus>
+				<onleft>251</onleft>
+				<onright>253</onright>
+				<onup>1000</onup>
+				<ondown>1000</ondown>
+				<onclick>ActivateWindow(OSDAudioSettings)</onclick>
+			</control>
+			<control type="button" id="251">
+<!-- Video settings button -->
+				<left>110</left>
+				<top>0</top>
+				<width>42</width>
+				<height>42</height>
+				<label>13395</label>
+				<font>-</font>
+				<texturefocus>OSDVideoFO.png</texturefocus>
+				<texturenofocus>OSDVideoNF.png</texturenofocus>
+				<onleft>250</onleft>
+				<onright>252</onright>
+				<onup>1000</onup>
+				<ondown>1000</ondown>
+				<onclick>ActivateWindow(OSDVideoSettings)</onclick>
+			</control>
+			
+		</control>
+	</controls>
+</window>
