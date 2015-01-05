@@ -56,6 +56,7 @@
 		<font>font13</font>
 	</default>
 	<default type="progress">
+<!-- Seekbar itself -->
 		<left>100</left>
 		<top>325</top>
 		<texturebg border="6,0,6,0">OSDProgressBack.png</texturebg>

@@ -53,37 +53,16 @@
 			</control>
 			<control type="group" id="1">
 <!-- Seekbar group -->
-				<left>185</left>
-				<top>710r</top>
+				<left>-10</left>
+				<top>704r</top>
 				<visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg]</visible>
-				<control type="label" id="1">
-					<visible>!VideoPlayer.Content(LiveTV)</visible>
-					<left>0</left>
-					<top>0</top>
-					<width>100</width>
-					<height>40</height>
-					<font>font13</font>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[Player.Time(hh:mm:ss)]</label>
-				</control>
-				<control type="label" id="1">
-					<visible>VideoPlayer.Content(LiveTV)</visible>
-					<left>0</left>
-					<top>0</top>
-					<width>100</width>
-					<height>40</height>
-					<font>font13</font>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[Player.StartTime(hh:mm)]</label>
-				</control>
 				<control type="progress" id="1">
+<!-- Unknown -->
 					<description>ProgressbarCache</description>
 					<left>100</left>
 					<top>15</top>
-					<width>720</width>
-					<height>16</height>
+					<width>1033</width>
+					<height>5</height>
 					<info>Player.ProgressCache</info>
 					<midtexture border="6,0,6,0">OSDProgressMidLight.png</midtexture>
 				</control>
@@ -91,22 +70,24 @@
 					<description>Progressbar</description>
 					<left>100</left>
 					<top>15</top>
-					<width>720</width>
-					<height>16</height>
+					<width>1033</width>
+					<height>5</height>
 					<info>Player.Progress</info>
 				</control>
 				<control type="label" id="1">
+<!-- Seekbar end number -->
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
-					<left>820</left>
-					<top>0</top>
+					<right>66</right>
+					<top>-6</top>
 					<width>100</width>
 					<height>40</height>
 					<font>font13</font>
 					<align>right</align>
 					<aligny>center</aligny>
-					<label>$INFO[Player.Duration(hh:mm:ss)]</label>
+					<label>-$INFO[Player.TimeRemaining]</label>
 				</control>
 				<control type="label" id="1">
+<!-- Seekbar end number live TV -->
 					<visible>VideoPlayer.Content(LiveTV)</visible>
 					<left>820</left>
 					<top>0</top>
@@ -180,6 +161,5 @@
 			<ondown>500</ondown>
 			<include>VisibleFadeEffect</include>
 		</control>
-		
 	</controls>
 </window>
