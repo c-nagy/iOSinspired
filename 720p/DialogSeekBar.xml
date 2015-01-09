@@ -46,8 +46,8 @@
 			</control>
 		</control>
 		<control type="group">
-			<left>370r</left>
-			<top>67</top>
+			<posx>370r</posx>
+			<posy>87</posy>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>

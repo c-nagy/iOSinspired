@@ -54,7 +54,7 @@
 		<!--!LiveTV -->
 		<control type="group" id="100">
 			<left>600</left>
-			<posy>80r</posy>
+			<posy>83r</posy>
 			<defaultcontrol always="true">202</defaultcontrol>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
@@ -148,13 +148,10 @@
 		<!-- !LiveTV -->
 		<control type="group">
 			<left>180r</left>
-			<posy>75r</posy>
+			<posy>83r</posy>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
-			
-			
-			
 			<control type="button" id="253">
 <!-- Bookmarks button -->
 				<left>1255r</left>
