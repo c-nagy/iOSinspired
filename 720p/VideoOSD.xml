@@ -12,18 +12,13 @@
 			<description>Done Button</description>
 			<posx>19</posx>
 			<posy>16</posy>
-			<width>55</width>
-			<height>25</height>
+			<width>52</width>
+			<height>52</height>
 			<visible>true</visible>
-			<colordiffuse>FFFFFFFF</colordiffuse>
-			<texturefocus colordiffuse="FFFFAAFF">foobar.png</texturefocus>
-			<texturenofocus colordiffuse="FFFFAAFF">foobar.png</texturenofocus>
-			<label>Done</label>
+			<texturefocus>XMark.png</texturefocus>
+			<texturenofocus>XMark.png</texturenofocus>
+			<label></label>
 			<font>font14</font>
-			<textcolor>FFFFFFFF</textcolor>
-			<focusedcolor>FFFFFFFF</focusedcolor>
-			<disabledcolor>80FFFFFF</disabledcolor>
-			<invalidcolor>FFFFFFFF</invalidcolor>
 			<align></align>
 			<aligny></aligny>
 			<textoffsetx></textoffsetx>
@@ -36,45 +31,17 @@
 			<ondown>3</ondown>
 			<onleft>1</onleft>
 			<onright>1</onright>
-		</control>
-		<control type="button" id="507">
-			<description>Fullscreen Menu Button</description>
-			<posx>45r</posx>
-			<posy>20</posy>
-			<width>22</width>
-			<height>22</height>
-			<visible>true</visible>
-			<texturefocus>Fullscreen.png</texturefocus>
-			<texturenofocus>Fullscreen.png</texturenofocus>
-			<onclick>Dialog.Close(VideoOSD,true)</onclick>
-			<onclick>FullScreen</onclick>
-		</control>
-		<control type="button" id="1000">
-<!-- X button in top right corner -->
-			<description>Close Window button</description>
-			<left>40</left>
-			<top>100</top>
-			<width>64</width>
-			<height>32</height>
-			<label>-</label>
-			<font>-</font>
-			<onclick>PlayerControl(Stop)</onclick>
-			<texturefocus>DialogCloseButton-focus1.png</texturefocus>
-			<texturenofocus>DialogCloseButton.png1</texturenofocus>
-			<onleft>1000</onleft>
-			<onright>1000</onright>
-			<onup>100</onup>
-			<ondown>100</ondown>
-			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
+			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
+		
 		<control type="slider" id="87">
 <!-- Slider itself, not containing bar. -->		
 			<description>Seek Slider</description>
-			<left>90</left>
-			<top>697r</top>
-			<width>1020</width>
-			<height>10</height>
+			<left>95</left>
+			<top>694r</top>
+			<width>1025</width>
+			<height>15</height>
 			<onup>702</onup>
 			<ondown>26</ondown>
 			<action>seek</action>
@@ -87,7 +54,7 @@
 		<!--!LiveTV -->
 		<control type="group" id="100">
 			<left>600</left>
-			<top>65r</top>
+			<posy>80r</posy>
 			<defaultcontrol always="true">202</defaultcontrol>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
@@ -95,9 +62,9 @@
 			<control type="button" id="200">
 <!-- Skip back button -->
 				<left>-290</left>
-				<top>0</top>
-				<width>64</width>
-				<height>32</height>
+				<top>7</top>
+				<width>70</width>
+				<height>38</height>
 				<label>210</label>
 				<font>-</font>
 				<texturefocus>OSDPrevTrackFO.png</texturefocus>
@@ -111,9 +78,9 @@
 			<control type="button" id="201">
 <!-- Rewind button -->
 				<left>-150</left>
-				<top>0</top>
-				<width>56</width>
-				<height>32</height>
+				<top>7</top>
+				<width>62</width>
+				<height>38</height>
 				<label>31354</label>
 				<font>-</font>
 				<texturefocus>OSDRewindFO.png</texturefocus>
@@ -128,8 +95,8 @@
 <!-- Play button -->
 				<left>0</left>
 				<top>0</top>
-				<width>38</width>
-				<height>34</height>
+				<width>54</width>
+				<height>50</height>
 				<label>31351</label>
 				<altlabel>208</altlabel>
 				<font>-</font>
@@ -147,9 +114,9 @@
 			<control type="button" id="204">
 <!-- Fast-forward button -->
 				<left>125</left>
-				<top>0</top>
-				<width>56</width>
-				<height>32</height>
+				<top>7</top>
+				<width>62</width>
+				<height>38</height>
 				<label>31353</label>
 				<font>-</font>
 				<texturefocus>OSDForwardFO.png</texturefocus>
@@ -163,9 +130,9 @@
 			<control type="button" id="205">
 <!-- Skip forward button -->
 				<left>260</left>
-				<top>0</top>
-				<width>64</width>
-				<height>32</height>
+				<top>7</top>
+				<width>70</width>
+				<height>38</height>
 				<label>209</label>
 				<font>-</font>
 				<texturefocus>OSDNextTrackFO.png</texturefocus>
@@ -181,18 +148,19 @@
 		<!-- !LiveTV -->
 		<control type="group">
 			<left>180r</left>
-			<top>65r</top>
+			<posy>75r</posy>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
+			
 			
 			
 			<control type="button" id="253">
 <!-- Bookmarks button -->
 				<left>1255r</left>
 				<top>2</top>
-				<width>30</width>
-				<height>40</height>
+				<width>40</width>
+				<height>50</height>
 				<label>298</label>
 				<font>-</font>
 				<texturefocus>OSDBookmarks.png</texturefocus>
@@ -205,10 +173,10 @@
 			</control>
 			<control type="button" id="250">
 <!-- Subtitle button -->
-				<left>1197r</left>
+				<left>1183r</left>
 				<top>4</top>
-				<width>38</width>
-				<height>38</height>
+				<width>48</width>
+				<height>48</height>
 				<label>31356</label>
 				<font>-</font>
 				<texturefocus>OSDSubtitlesFO.png</texturefocus>
@@ -220,10 +188,10 @@
 			</control>
 			<control type="button" id="252">
 <!-- Audio settings button -->
-				<left>40</left>
+				<left>30</left>
 				<top>4</top>
-				<width>38</width>
-				<height>38</height>
+				<width>48</width>
+				<height>48</height>
 				<label>13396</label>
 				<font>-</font>
 				<texturefocus>OSDAudio.png</texturefocus>
@@ -238,8 +206,8 @@
 <!-- Video settings button -->
 				<left>110</left>
 				<top>0</top>
-				<width>42</width>
-				<height>42</height>
+				<width>52</width>
+				<height>52</height>
 				<label>13395</label>
 				<font>-</font>
 				<texturefocus>OSDVideoFO.png</texturefocus>

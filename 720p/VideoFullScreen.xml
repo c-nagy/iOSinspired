@@ -9,9 +9,9 @@
 			<control type="image" id="1">
 <!-- Bottom background gradient -->
 				<left>0</left>
-				<top>620</top>
+				<top>600</top>
 				<width>1280</width>
-				<height>100</height>
+				<height>250</height>
 				<texture diffuse="100000">HomeNowPlayingBack.png</texture>
 			</control>
 			<control type="image" id="1">
@@ -19,7 +19,7 @@
 				<left>0</left>
 				<top>0</top>
 				<width>1280</width>
-				<height>65</height>
+				<height>85</height>
 				<texture diffuse="100000">HomeNowPlayingBack.png</texture>
 			</control>
 			
@@ -54,37 +54,37 @@
 			<control type="group" id="1">
 <!-- Seekbar group -->
 				<left>-10</left>
-				<top>704r</top>
+				<posy>696r</posy>
 				<visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEpg]</visible>
 				<control type="progress" id="1">
 <!-- Unknown -->
 					<description>ProgressbarCache</description>
-					<left>100</left>
+					<left>105</left>
 					<top>15</top>
-					<width>1033</width>
+					<width>1025</width>
 					<height>5</height>
 					<info>Player.ProgressCache</info>
 					<midtexture border="6,0,6,0">OSDProgressMidLight.png</midtexture>
 				</control>
 				<control type="progress" id="1">
 					<description>Progressbar</description>
-					<left>100</left>
+					<left>105</left>
 					<top>15</top>
-					<width>1033</width>
+					<width>1025</width>
 					<height>5</height>
 					<info>Player.Progress</info>
 				</control>
 				<control type="label" id="1">
 <!-- Seekbar end number -->
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
-					<right>66</right>
+					<right>25</right>
 					<top>-6</top>
-					<width>100</width>
+					<width>150</width>
 					<height>40</height>
-					<font>font13</font>
+					<font>fontcustom</font>
 					<align>right</align>
 					<aligny>center</aligny>
-					<label>-$INFO[Player.TimeRemaining]</label>
+					<label>-$INFO[Player.TimeRemaining(hh:mm:ss)]</label>
 				</control>
 				<control type="label" id="1">
 <!-- Seekbar end number live TV -->
