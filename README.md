@@ -1,9 +1,8 @@
 iOSinspired
 ===========
 
-Quick note for people downloading now: I am aware the top buttons are much too small in this most recent change! I will get this fixed.
-
 Skin preview: https://i.imgur.com/n9vAZqK.jpg
+Updated screenshot: http://i.imgur.com/A6CLOYt.jpg
 
 iOS inspired theme for Kodi/XBMC. Designed for mobile devices.
 
