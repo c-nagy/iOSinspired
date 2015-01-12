@@ -35,6 +35,20 @@
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
 		
+		<control type="button" id="1">
+			<description>Invisible button so controls hide when video tapped</description>
+			<posx>0</posx>
+			<posy>84</posy>
+			<width>1280</width>
+			<height>518</height>
+			<visible>true</visible>
+			<texturefocus></texturefocus>
+      <texturenofocus></texturenofocus>
+			<align>left</align>
+			<aligny>top</aligny>
+			<onclick>Dialog.Close(videoosd)</onclick>
+		</control>
+		
 		<control type="slider" id="87">
 <!-- Slider itself, not containing bar. -->		
 			<description>Seek Slider</description>
