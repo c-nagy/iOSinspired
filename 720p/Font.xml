@@ -3,7 +3,7 @@
 	<fontset id="Default" idloc="31390"> 
 		<!-- Normal Fonts -->
 		<font>
-			<name>fontcustom</name>
+			<name>fontosd</name>
 			<filename>Roboto-Regular.ttf</filename>
 			<size>28</size>
 		</font>
