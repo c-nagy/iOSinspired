@@ -27,7 +27,7 @@
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
 		</control>
 		<control type="slider" id="87">
-			<description>Seek Slider</description>
+			<description>Seekbar slider knob</description>
 			<left>95</left>
 			<top>694r</top>
 			<width>1025</width>
@@ -63,6 +63,7 @@
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 			<control type="button" id="200">
+				<description>Skip back button</description>
 				<left>-290</left>
 				<top>7</top>
 				<width>70</width>
@@ -78,6 +79,7 @@
 				<onclick>PlayerControl(Previous)</onclick>
 			</control>
 			<control type="button" id="201">
+				<description>Rewind button</description>
 				<left>-150</left>
 				<top>7</top>
 				<width>62</width>
@@ -93,6 +95,7 @@
 				<onclick>PlayerControl(Rewind)</onclick>
 			</control>
 			<control type="togglebutton" id="202">
+				<description>Play/Pause button</description>
 				<left>0</left>
 				<top>0</top>
 				<width>54</width>
@@ -112,6 +115,7 @@
 				<onclick>PlayerControl(Play)</onclick>
 			</control>
 			<control type="button" id="204">
+				<description>Fast-forward button</description>
 				<left>125</left>
 				<top>7</top>
 				<width>62</width>
@@ -127,6 +131,7 @@
 				<onclick>PlayerControl(Forward)</onclick>
 			</control>
 			<control type="button" id="205">
+				<description>Skip forward button</description>
 				<left>260</left>
 				<top>7</top>
 				<width>70</width>
@@ -152,6 +157,7 @@
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 			<control type="button" id="300">
+				<description>Channel Up button</description>
 				<posx>1111r</posx>
 				<posy>4</posy>
 				<width>55</width>
@@ -167,6 +173,7 @@
 				<onclick>PlayerControl(Previous)</onclick>
 			</control>
 			<control type="button" id="301">
+				<description>Channel Down button</description>
 				<posx>1039r</posx>
 				<posy>4</posy>
 				<width>55</width>
@@ -182,6 +189,7 @@
 				<onclick>PlayerControl(Next)</onclick>
 			</control>
 			<control type="button" id="302">
+				<description>Rewind button (LiveTV)</description>
 				<left>-150</left>
 				<top>7</top>
 				<width>62</width>
@@ -199,6 +207,7 @@
 				<animation effect="fade" start="100" end="50" time="100" condition="!Player.SeekEnabled">Conditional</animation>
 			</control>
 			<control type="togglebutton" id="303">
+				<description>Play/Pause button (LiveTV)</description>
 				<left>0</left>
 				<top>0</top>
 				<width>54</width>
@@ -220,6 +229,7 @@
 				<animation effect="fade" start="100" end="50" time="100" condition="!Player.PauseEnabled">Conditional</animation>
 			</control>
 			<control type="button" id="305">
+				<description>Fast-forward button (LiveTV)</description>
 				<left>125</left>
 				<top>7</top>
 				<width>62</width>
@@ -237,6 +247,7 @@
 				<animation effect="fade" start="100" end="50" time="100" condition="!Player.SeekEnabled">Conditional</animation>
 			</control>
 			<control type="button" id="306">
+				<description>Channel List button</description>
 				<posx>1183r</posx>
 				<posy>4</posy>
 				<width>55</width>
@@ -253,6 +264,7 @@
 				<onclick>Dialog.Close(VideoOSD)</onclick>
 			</control>
 			<control type="button" id="307">
+				<description>EPG button</description>
 				<posx>1255r</posx>
 				<posy>2</posy>
 				<width>55</width>
@@ -279,6 +291,7 @@
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 			<!--
 			<control type="button" id="255">
+				<description>Stereoscopic (3D) button</description>
 				<visible>VideoPlayer.IsStereoscopic</visible>
 				<left>0</left>
 				<top>0</top>
@@ -295,6 +308,7 @@
 			</control>
 			-->
 			<control type="button" id="253">
+				<description>Bookmarks button</description>
 				<posx>1255r</posx>
 				<posy>2</posy>
 				<width>40</width>
@@ -310,6 +324,7 @@
 				<onclick>ActivateWindow(VideoBookmarks)</onclick>
 			</control>
 			<control type="button" id="250">
+				<description>Subtitles button</description>
 				<posx>1183r</posx>
 				<posy>4</posy>
 				<width>48</width>
@@ -324,6 +339,7 @@
 				<ondown>1000</ondown>
 			</control>
 			<control type="button" id="252">
+				<description>Audio Settings button</description>
 				<left>30</left>
 				<top>4</top>
 				<width>48</width>
@@ -339,6 +355,7 @@
 				<onclick>ActivateWindow(OSDAudioSettings)</onclick>
 			</control>
 			<control type="button" id="251">
+				<description>Video Settings button</description>
 				<left>110</left>
 				<top>0</top>
 				<width>52</width>
@@ -364,6 +381,7 @@
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 			<!--
 			<control type="button" id="354">
+				<description>Stereoscopic (3D) button (LiveTV)</description>
 				<visible>VideoPlayer.IsStereoscopic</visible>
 				<left>0</left>
 				<top>0</top>
@@ -380,6 +398,7 @@
 			</control>
 			-->
 			<control type="button" id="350">
+				<description>Teletext button</description>
 				<left>-52</left>
 				<top>0</top>
 				<width>55</width>
@@ -395,6 +414,7 @@
 				<onclick>ActivateWindow(Teletext)</onclick>
 			</control>
 			<control type="button" id="351">
+				<description>Video Settings button (LiveTV)</description>
 				<left>110</left>
 				<top>0</top>
 				<width>52</width>
@@ -410,6 +430,7 @@
 				<onclick>ActivateWindow(OSDVideoSettings)</onclick>
 			</control>
 			<control type="button" id="352">
+				<description>Audio Settings button (LiveTV)</description>
 				<left>30</left>
 				<top>4</top>
 				<width>48</width>
@@ -425,6 +446,7 @@
 				<onclick>ActivateWindow(OSDAudioSettings)</onclick>
 			</control>
 			<control type="togglebutton" id="353">
+				<description>Record button</description>
 				<left>220</left>
 				<top>0</top>
 				<width>55</width>
@@ -459,6 +481,7 @@
 			<visible>Control.HasFocus(410) | Control.HasFocus(250) | ControlGroup(400).HasFocus</visible>
 		</control>
 		<control type="grouplist" id="400">
+			<description>Subtitle Pop-up group</description>
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<animation effect="slide" start="0,0" end="0,80" time="0" condition="![VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled]">Conditional</animation>
