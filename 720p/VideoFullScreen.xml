@@ -18,7 +18,7 @@
 				<top>0</top>
 				<width>1280</width>
 				<height>85</height>
-				<texture diffuse="100000">OSDControlsTransparentBG.png</texture>
+				<texture>OSDControlsTransparentBG.png</texture>
 			</control>
 			
 			<control type="group" id="1">
